@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignalFrame Decision Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background-color: #f9f9f9;
+            color: #1E293B;
+        }
+        h1, h2 {
+            color: #0F172A;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        .question {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        button {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #1E40AF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .results {
+            margin-top: 2rem;
+            display: none;
+        }
+        .decision {
+            margin-bottom: 1.5rem;
+            background: #F1F5F9;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SignalFrame Decision Engine</h1>
+        <p>Select your top concerns this week. We’ll suggest bold moves based on real-world signals.</p>
+
+        <div class="question">
+            <label><input type="checkbox" id="finance"> 📉 Financial security</label>
+            <label><input type="checkbox" id="inflation"> 📊 Inflation or cost of living</label>
+            <label><input type="checkbox" id="banking"> 🏦 Banking system stability</label>
+            <label><input type="checkbox" id="conflict"> 🌍 Global conflict or instability</label>
+            <label><input type="checkbox" id="energy"> ⚡ Energy/fuel costs</label>
+            <label><input type="checkbox" id="relocation"> 🏠 Relocation or safer regions</label>
+            <label><input type="checkbox" id="safety"> 🛡️ Personal safety</label>
+            <label><input type="checkbox" id="job"> 🤖 AI replacing my job</label>
+            <label><input type="checkbox" id="clarity"> 🧠 Mental clarity/decision overload</label>
+        </div>
+
+        <button onclick="showDecisions()">Get My 3 Moves</button>
+
+        <div class="results" id="results">
+            <h2>Your SignalFrame Moves</h2>
+
+            <div class="decision">
+                <strong>💰 Move 2% of your savings into physical gold</strong>
+                <p>Global gold demand is spiking amid rising global risk. Hedge against inflation + banking shocks.</p>
+                <p><em>Impact:</em> Hedge, stability | <em>Cost:</em> Less liquidity</p>
+            </div>
+
+            <div class="decision">
+                <strong>🌍 Start preparing a dual passport strategy</strong>
+                <p>Visa restrictions and regional tensions are rising. Position yourself for long-term flexibility.</p>
+                <p><em>Impact:</em> Freedom hedge | <em>Cost:</em> Legal & setup effort</p>
+            </div>
+
+            <div class="decision">
+                <strong>🛑 Limit new tech investments until Q3</strong>
+                <p>AI stocks are peaking fast — volatility is up. Wait for signal confirmation before reinvesting.</p>
+                <p><em>Impact:</em> Lower downside risk | <em>Cost:</em> Missed upside (short term)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showDecisions() {
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
