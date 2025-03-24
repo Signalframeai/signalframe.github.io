@@ -54,6 +54,39 @@ footer {
     text-align: center;
     padding: 1rem;
     background-color: #F1F5F9;
+
+    .navbar {
+    background-color: #0F172A;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.nav-logo {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
     margin-top: 2rem;
     font-size: 0.9rem;
 }
