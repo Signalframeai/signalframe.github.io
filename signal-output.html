@@ -1,189 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Signal Results - SignalFrame</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <nav class="navbar" style="background-color: #0F172A; padding: 1rem;">
-    <div class="nav-logo">
-      <img src="signalframelogo.png" alt="SignalFrame Logo" style="height: 40px; vertical-align: middle;" />
-    </div>
-    <div class="nav-links" style="display: inline-block; margin-left: 20px;">
-      <a href="index.html" style="color: #FFFFFF;">Home</a>
-      <a href="decision-model.html" style="color: #FFFFFF;">Decision Model</a>
-      <a href="signal-check.html" style="color: #FFFFFF;">Signal Check</a>
-      <a href="about.html" style="color: #FFFFFF;">About Us</a>
-      <a href="roadmap.html" style="color: #FFFFFF;">Roadmap</a>
-      <a href="faq.html" style="color: #FFFFFF;">FAQ</a>
-      <a href="contact.html" style="color: #FFFFFF;">Contact Us</a>
-      <a href="donate.html" style="color: #FFFFFF;">Donations</a>
-    </div>
-  </nav>
-
-  <div class="page-content" style="max-width: 900px; margin: auto; padding: 2rem;">
-    <h1>Your Signal-Backed Profile</h1>
-    <p>Here's a custom set of next steps based on the signals you're tuned into.</p>
-
-    <div id="profile-output-container"></div>
-  </div>
-
-  <footer><p>© SignalFrame | <a href="mailto:contact@signalframe.ai">contact@signalframe.ai</a></p></footer>
-
-  <script>
-    const profiles = {{
-      P01: {{
-        name: "Wealth Scout",
-        desc: "Focused on long-term financial growth, low risk, and passive readiness.",
-        actions: [
-          "Open a diversified, low-fee index investment account.",
-          "Allocate 5% of monthly income to precious metals or stable assets.",
-          "Subscribe to macroeconomic signal trackers."
-        ]
-      }},
-      P02: {{
-        name: "Short-Term Stabilizer",
-        desc: "Urgent financial repositioning, risk-averse, and near-term planner.",
-        actions: [
-          "Freeze non-essential spending for 30 days.",
-          "Switch savings to an inflation-protected account.",
-          "Review recurring subscriptions and cancel 20%."
-        ]
-      }},
-      P03: {{
-        name: "Career Realigner",
-        desc: "Medium urgency and ambition, future-proofing skillsets.",
-        actions: [
-          "Enroll in a 6-week AI foundations or data literacy course.",
-          "Audit LinkedIn and rebuild your network with 20 new connects.",
-          "Identify 3 cross-functional skills needed in your desired role."
-        ]
-      }},
-      P04: {{
-        name: "Bold Relocator",
-        desc: "High-risk appetite, short-term relocation drive.",
-        actions: [
-          "Explore countries offering fast-track digital nomad visas.",
-          "Create a 90-day move checklist and cost breakdown.",
-          "Research regional inflation, housing, and political climate data."
-        ]
-      }},
-      P05: {{
-        name: "Safety Strategist",
-        desc: "Cautious but structured, building resilience before disruptions.",
-        actions: [
-          "Create or refresh your emergency ‘go bag’.",
-          "Run a household blackout test for 6 hours.",
-          "Join a local or digital preparedness forum."
-        ]
-      }},
-      P06: {{
-        name: "Passive Nomad",
-        desc: "Exploring location freedom without urgent plans.",
-        actions: [
-          "Bookmark 3 relocation YouTubers or expat blogs.",
-          "Create a spreadsheet of top 5 countries and cost of living indexes.",
-          "Follow embassy Twitter accounts for local shifts and signals."
-        ]
-      }},
-      P07: {{
-        name: "Income Fortifier",
-        desc: "Seeks stability and security through side-hustle planning.",
-        actions: [
-          "Spend 2 hours exploring monetisation options for existing skills.",
-          "Choose 1 low-lift platform to trial freelancing (e.g. Contra, Fiverr).",
-          "Schedule 30 minutes weekly to test ideas with minimal investment."
-        ]
-      }},
-      P08: {{
-        name: "Signal Curator",
-        desc: "High-context, high-input user wanting deep data feeds.",
-        actions: [
-          "Set up signal alerts for commodity shifts and currency movement.",
-          "Shift 10% of portfolio to non-correlated assets.",
-          "Follow 3 macro trend newsletters or think tanks."
-        ]
-      }},
-      P09: {{
-        name: "Systemic Escaper",
-        desc: "Looking to exit known systems – digital, economic, or geographic.",
-        actions: [
-          "Test-run alternative payment methods (crypto, P2P systems).",
-          "Join online communities for sovereign strategies.",
-          "Investigate countries with low digital surveillance and high freedom scores."
-        ]
-      }},
-      P10: {{
-        name: "Time-Based Preparer",
-        desc: "Working backwards from a known event (retirement, move, etc).",
-        actions: [
-          "Plot a countdown milestone board and share with a trusted peer.",
-          "Identify the 3 biggest unknowns in your timeline and build buffers.",
-          "List every subscription or recurring commitment and timeline it to your event."
-        ]
-      }},
-      P11: {{
-        name: "Crypto Hedge Builder",
-        desc: "Seeking to offset currency instability with digital assets.",
-        actions: [
-          "Allocate no more than 10% into 2–3 long-term crypto plays.",
-          "Use cold storage for assets you don’t plan to touch.",
-          "Track global policy shifts on CBDCs and digital tax."
-        ]
-      }},
-      P12: {{
-        name: "Hard Asset Planner",
-        desc: "Long-term risk-averse, prepping for inflation + instability.",
-        actions: [
-          "Research local precious metal dealers and warehouse receipts.",
-          "Start a physical savings asset register.",
-          "Consider infrastructure ETFs and farmland REITs."
-        ]
-      }},
-      P13: {{
-        name: "Grid-Down Optimist",
-        desc: "Planning calmly for high-impact, low-probability events.",
-        actions: [
-          "Run a full-day simulation of offline systems (no WiFi, power, phone).",
-          "Install basic water filtering + solar gear.",
-          "Document a family or group resilience plan."
-        ]
-      }},
-      P14: {{
-        name: "Migration Trigger Watcher",
-        desc: "Passive observer waiting for big enough shift to act.",
-        actions: [
-          "Set up alerts for housing, climate, political, and currency shifts.",
-          "Save monthly in an untied travel fund.",
-          "Start learning a language linked to your ‘Plan B’ country."
-        ]
-      }},
-      P15: {{
-        name: "Digital Freedom Seeker",
-        desc: "Prioritizing privacy, mobility, and decentralization.",
-        actions: [
-          "Migrate to privacy-first browsers and operating systems.",
-          "Build a location-agnostic skill stack.",
-          "Apply for a global payment platform with crypto support."
-        ]
-      }}
-    }};
-
-    const profileCode = localStorage.getItem("profileCode");
-    const container = document.getElementById("profile-output-container");
-
-    if (profiles[profileCode]) {{
-      const profile = profiles[profileCode];
-      container.innerHTML = `
-        <h2>${{profile.name}}</h2>
-        <p>${{profile.desc}}</p>
-        <ul>${{profile.actions.map(item => `<li>${{item}}</li>`).join('')}}</ul>
-      `;
-    }} else {{
-      container.innerHTML = "<p>We couldn't identify a match. Try again or adjust your inputs.</p>";
-    }}
-  </script>
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Your Signal Moves - SignalFrame</title>
+<link rel="stylesheet" href="style.css" />
+</head><body>
+<nav class="navbar"><div class="nav-logo">SignalFrame</div><div class="nav-links">
+<a href="index.html">Home</a><a href="decision-model.html">Decision Model</a>
+<a href="signal-check.html">Signal Check</a><a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a><a href="donate.html">Donations</a></div></nav>
+<div class="page-content" style="max-width:800px;margin:auto;padding:2rem;">
+<h1>Your Signal-Backed Moves</h1>
+<p>Based on your responses, here are 3 bold and actionable decisions tailored to where you are — and where you’re heading.</p>
+<div class="signal-result" id="profile-a">
+<h2>Profile A – Financial Security Seeker</h2><ul>
+<li><strong>Diversify Investments:</strong> Rebalance your portfolio to include a mix of equities, bonds, and alternative assets.</li>
+<li><strong>Build Emergency Savings:</strong> Save 3–6 months of living expenses to buffer uncertainty.</li>
+<li><strong>Review Retirement Contributions:</strong> Maximise your tax-advantaged accounts for compound growth.</li></ul></div>
+<div class="signal-result" id="profile-b">
+<h2>Profile B – Personal Safety Planner</h2><ul>
+<li><strong>Develop a Safety Plan:</strong> Map emergency contacts, safe zones, and response steps.</li>
+<li><strong>Secure Your Home:</strong> Add lighting, locks, and alerts to increase physical security.</li>
+<li><strong>Stay Informed:</strong> Subscribe to real-time alerts in your local area.</li></ul></div>
+<div class="signal-result" id="profile-c">
+<h2>Profile C – Career Stability Seeker</h2><ul>
+<li><strong>Enhance Your Skills:</strong> Enrol in a short course in AI, cybersecurity, or a future-proof skill.</li>
+<li><strong>Expand Your Network:</strong> Join forums, LinkedIn groups, or attend industry meetups.</li>
+<li><strong>Explore Side Projects:</strong> Use 1 hour/week to test a monetisable skill or hobby.</li></ul></div>
+<div class="signal-result" id="profile-d">
+<h2>Profile D – Relocation Planner</h2><ul>
+<li><strong>Research New Regions:</strong> Evaluate options for tax, safety, and opportunity.</li>
+<li><strong>Plan Financially:</strong> Set a moving fund and track costs per country/city.</li>
+<li><strong>Visit or Explore:</strong> Use digital nomad visas or reconnaissance trips to test location fit.</li></ul></div>
+</div>
+<footer><p>© SignalFrame | <a href="mailto:contact@signalframe.ai">contact@signalframe.ai</a></p></footer>
+</body></html>
